@@ -1,9 +1,16 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './pages/Shared/Footer';
+import Header from './pages/Shared/Header';
 
 function App() {
   return (
     <div>
-      <h1 className='text-purple-500'>Welcome to my final assignment</h1>
+      <Header />
+      <Routes>
+        <Route path='/' element={<p>HOME PAGE</p>} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
