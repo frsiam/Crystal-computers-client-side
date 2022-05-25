@@ -5,7 +5,7 @@ const Purchase = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     return (
-        <div>
+        <div className='h-[calc(100vh-200px)]'>
             <h1>Here is the purchase section: {id}</h1>
         </div>
     );

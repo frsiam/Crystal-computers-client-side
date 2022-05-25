@@ -15,7 +15,7 @@ const Parts = () => {
             <div className='container flex justify-center text-4xl text-orange-700 font-bold my-6'>
                 <h1>Our Parts</h1>
             </div>
-            <div className='container grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto text-center  py-5'>
+            <div className='container grid grid-cols-1 gap-4 mx-auto text-center  py-5'>
                 {
                     parts.slice(-3).map(p => <SingleParts key={p._id} part={p} desc={p.description.slice(0, 100)} />)
                 }
