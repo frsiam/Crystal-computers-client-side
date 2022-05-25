@@ -22,7 +22,7 @@ const Header = () => {
             : <Link to='/login'>Login</Link>}</li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gradient-to-r from-purple-500 to-pink-500">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -32,7 +32,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='' className="btn btn-ghost normal-case text-xl">CrystalComputerTech</Link>
+                <Link to='' className="btn btn-ghost normal-case text-xl">Crystal Computers</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
