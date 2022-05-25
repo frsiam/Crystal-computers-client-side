@@ -24,6 +24,7 @@ const Register = () => {
     if (user || gUser) {
         console.dir(user || gUser)
         // navigate('/appointment')
+        navigate('/')
     }
 
     if (error || gError || updateError) {
@@ -38,7 +39,7 @@ const Register = () => {
         const { email, password, name } = data;
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name });
-        navigate('/')
+        // navigate('/')
     };
     return (
         <div className='flex justify-center h-[calc(100vh-70px)] items-center'>
