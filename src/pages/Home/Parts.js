@@ -12,7 +12,7 @@ const Parts = () => {
     }
     return (
         <div className='max-w-6xl mx-auto'>
-            <div className='container flex justify-center text-4xl text-orange-700 font-bold mt-6'>
+            <div className='container flex justify-center text-4xl text-orange-700 font-bold my-6'>
                 <h1>Our Parts</h1>
             </div>
             <div className='container grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto text-center  py-5'>
