@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Proccessor",
+        "img": "https://i.ibb.co/8Xm6z3m/apple.jpg",
+        "price": 200,
+        "availableQuantity": 50000,
+        "minOrderQuantity": 500,
+        "email": "siam.frs@gmail.com",
+        "description": "Fugiat adipisicing magna magna nulla reprehenderit officia sit nostrud reprehenderit velit fugiat laborum. Irure et velit commodo nostrud excepteur ad. Laborum pariatur ut cillum magna ut occaecat incididunt cillum aliqua. Mollit proident amet commodo ad pariatur velit do officia reprehenderit. Eiusmod cillum ad nisi adipisicing consequat id veniam id.\r\n"
+    },
+    {
+        "name": "RAM",
+        "img": "https://i.ibb.co/8Xm6z3m/apple.jpg",
+        "price": 300,
+        "availableQuantity": 300000,
+        "minOrderQuantity": 100,
+        "email": "siam.frs@gmail.com",
+        "description": "Cillum ex eu qui sit reprehenderit mollit laborum aute exercitation. Qui enim culpa excepteur tempor. Sint aliqua duis nostrud aute fugiat adipisicing aliqua occaecat adipisicing. Id id cillum irure adipisicing ipsum est proident nisi excepteur ipsum culpa. Magna dolore amet ipsum ipsum pariatur mollit irure proident. Eiusmod dolore commodo esse ea esse est duis non est excepteur quis aliqua proident. Qui irure incididunt est sint cupidatat.\r\n"
+    },
+    {
+        "name": "Hard Disk",
+        "img": "https://i.ibb.co/8Xm6z3m/apple.jpg",
+        "price": 400,
+        "availableQuantity": 60000,
+        "minOrderQuantity": 500,
+        "email": "siam.frs@gmail.com",
+        "description": "Laboris quis excepteur sunt ut excepteur commodo ad amet consequat non mollit in elit aute. Laboris ullamco do voluptate quis deserunt ea sit consectetur ea fugiat. Aute nulla sunt ea cupidatat adipisicing occaecat. Id dolore ullamco veniam in ipsum consequat ex do dolore nostrud occaecat veniam ullamco voluptate. Cillum dolore do adipisicing consequat.\r\n"
+    },
+    {
+        "name": "SSD",
+        "img": "https://i.ibb.co/8Xm6z3m/apple.jpg",
+        "price": 400,
+        "availableQuantity": 60000,
+        "minOrderQuantity": 500,
+        "email": "siam.frs@gmail.com",
+        "description": "Laboris quis excepteur sunt ut excepteur commodo ad amet consequat non mollit in elit aute. Laboris ullamco do voluptate quis deserunt ea sit consectetur ea fugiat. Aute nulla sunt ea cupidatat adipisicing occaecat. Id dolore ullamco veniam in ipsum consequat ex do dolore nostrud occaecat veniam ullamco voluptate. Cillum dolore do adipisicing consequat.\r\n"
+    },
+    {
+        "name": "Cooling Fan",
+        "img": "https://i.ibb.co/8Xm6z3m/apple.jpg",
+        "price": 400,
+        "availableQuantity": 60000,
+        "minOrderQuantity": 500,
+        "email": "siam.frs@gmail.com",
+        "description": "Laboris quis excepteur sunt ut excepteur commodo ad amet consequat non mollit in elit aute. Laboris ullamco do voluptate quis deserunt ea sit consectetur ea fugiat. Aute nulla sunt ea cupidatat adipisicing occaecat. Id dolore ullamco veniam in ipsum consequat ex do dolore nostrud occaecat veniam ullamco voluptate. Cillum dolore do adipisicing consequat.\r\n"
+    }
+]
