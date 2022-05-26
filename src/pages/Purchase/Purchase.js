@@ -15,7 +15,9 @@ const Purchase = () => {
 
     const [part, setPart] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:4000/part/${id}`)
+        // heroku: https://warm-chamber-44220.herokuapp.com/
+        // Local: http://localhost:4000/
+        fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPart(data)
@@ -53,11 +55,11 @@ const Purchase = () => {
             phone: event.target.phone.value,
             address: event.target.address.value
         }
-        console.log(orderSummary)
 
         const newQuantity = { availableQuantity: parseFloat(availableQuantity) - parseFloat(orderQuantity) };
-
-        fetch('http://localhost:4000/order', {
+        // heroku: https://warm-chamber-44220.herokuapp.com/
+        // Local: http://localhost:4000/
+        fetch('https://warm-chamber-44220.herokuapp.com/order', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
@@ -66,8 +68,9 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-
-        fetch(`http://localhost:4000/part/${id}`, {
+        // heroku: https://warm-chamber-44220.herokuapp.com/
+        // Local: http://localhost:4000/
+        fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json'
@@ -82,7 +85,7 @@ const Purchase = () => {
     }
     return (
         <>
-            <h1 className='text-3xl font-bold text-primary text-center pt-12'>Order {name} from this page</h1>
+            <h1 className='text-3xl font-bold text-primary text-center pt-12'>Order <span className='text-orange-600'>{name}</span> from this page</h1>
             <div className="hero min-h-screen max-w-6xl mx-auto">
                 <div className="hero-content gap-x-32 flex-col lg:flex-row-reverse">
                     <div className="card text-center lg:text-left shadow-xl image-full">

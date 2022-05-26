@@ -20,7 +20,7 @@ const Header = () => {
         {
             user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
-        <li>{user && <span className='text-lg font-bold text-slate-300'>{user.displayName.split(' ').reverse()[0]}</span>}</li>
+        <li>{user && <span className='text-lg font-bold text-slate-300'>{user.displayName}</span>}</li>
         <li>{user ? <button onClick={() => {
             signOut(auth);
             navigate('/login')
