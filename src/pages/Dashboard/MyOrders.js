@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import SweetAlert from 'sweetalert-react/lib/SweetAlert';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
@@ -9,8 +10,18 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:4000/myorder?email=${user.email}`)
-                .then(res => res.json())
+            fetch(`http://localhost:4000/myorder?email=${user.email}`, {
+                method: 'get',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+
+                    }
+                    return res.json()
+                })
                 .then(data => setMyOrder(data))
         }
     }, [user, isReload])
@@ -33,6 +44,7 @@ const MyOrders = () => {
                 })
         }
     }
+
     return (
         <div className='max-w-6xl mx-auto'>
             <h1 className='text-center'>My orders: {myorder.length}</h1>

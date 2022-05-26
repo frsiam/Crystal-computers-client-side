@@ -4,7 +4,9 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
+import loginbg from '../../assets/images/login.png'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    // const [token] = useToken(user || gUser)
+    const [token] = useToken(user || gUser)
     let location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
@@ -24,10 +26,10 @@ const Login = () => {
     let signInError;
 
     useEffect(() => {
-        if (user || gUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [token, from, navigate])
 
     if (error || gError) {
         signInError = <p className='text-red-600'>{error?.message || gError?.message}</p>
@@ -44,7 +46,7 @@ const Login = () => {
     };
 
     return (
-        <div className='flex justify-center h-[calc(100vh-70px)] items-center'>
+        <div style={{ backgroundImage: `url(${loginbg})` }} className='flex justify-center h-[calc(100vh-70px)] items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body items-center text-center">
                     <h2 className="text-2xl font-bold">Login</h2>

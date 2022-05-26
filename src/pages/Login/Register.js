@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
+import registerbg from '../../assets/images/register.png';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Register = () => {
     if (token) {
         console.dir(user || gUser)
         // navigate('/appointment')
-        // navigate('/')
+        navigate('/')
     }
 
     if (error || gError || updateError) {
@@ -44,7 +45,7 @@ const Register = () => {
         // navigate('/')
     };
     return (
-        <div className='flex justify-center h-[calc(100vh-70px)] items-center'>
+        <div style={{ backgroundImage: `url(${registerbg})` }} className='flex justify-center h-[calc(100vh-70px)] items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body items-center text-center">
                     <h2 className="text-2xl font-bold">Sign Up</h2>
