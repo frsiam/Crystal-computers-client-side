@@ -12,7 +12,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:4000/myorder?email=${user.email}`, {
+            fetch(`https://warm-chamber-44220.herokuapp.com/myorder?email=${user.email}`, {
                 method: 'get',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure to Cancel this Order?');
         if (proceed) {
             console.log(id)
-            fetch(`http://localhost:4000/order/${id}`, {
+            fetch(`https://warm-chamber-44220.herokuapp.com/order/${id}`, {
                 method: 'delete',
                 headers: {
                     'content-type': 'application/json'
