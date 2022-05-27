@@ -65,8 +65,8 @@ const Users = () => {
                             users.map((user, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{user.email}</td>
-                                <td>{user.role !== 'admin' ? <button onClick={() => handleMakeAdmin(user.email)} className="btn btn-sm">make admin</button> : <button className='btn btn-success'>Admin</button>}</td>
-                                <td><button className="btn btn-sm">Remove User</button></td>
+                                <td>{user.role !== 'admin' ? <button onClick={() => handleMakeAdmin(user.email)} className="btn btn-sm">make admin</button> : <button className='btn btn-sm btn-success'>Admin</button>}</td>
+                                <td>{user.role !== 'admin' && <button className="btn btn-sm">Remove User</button>}</td>
                             </tr>)
                         }
                     </tbody>

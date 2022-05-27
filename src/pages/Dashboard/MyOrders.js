@@ -50,8 +50,7 @@ const MyOrders = () => {
     }
 
     return (
-        <div className='max-w-6xl mx-auto'>
-            <h1 className='text-center'>My orders: {myorder.length}</h1>
+        <div className='max-w-6xl mx-auto mt-8'>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* <!-- head --> */}
