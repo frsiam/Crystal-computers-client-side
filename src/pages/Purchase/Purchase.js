@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -63,7 +64,10 @@ const Purchase = () => {
             body: JSON.stringify(orderSummary)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                toast.success('Your order successfully completed !!')
+            })
         fetch(`http://localhost:4000/part/${id}`, {
             method: 'put',
             headers: {

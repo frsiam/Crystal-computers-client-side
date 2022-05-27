@@ -50,8 +50,8 @@ const Users = () => {
     return (
         <div>
             <h1>Here is Shoe all users: {users.length}</h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead className='text-center'>
                         <tr>
                             <th></th>

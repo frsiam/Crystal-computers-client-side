@@ -9,6 +9,7 @@ import Users from './pages/Dashboard/Users';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Login/Register';
+import RequireAdmin from './pages/Login/RequireAdmin';
 import RequireAuth from './pages/Login/RequireAuth';
 import NotFound from './pages/NotFound/NotFound';
 import Purchase from './pages/Purchase/Purchase';
@@ -34,7 +35,11 @@ function App() {
           <Route index element={<MyOrders />} />
           <Route path='addreview' element={<AddReview />} />
           <Route path='myprofile' element={<MyProfile />} />
-          <Route path='users' element={<Users />} />
+          <Route path='users' element={
+            <RequireAdmin>
+              <Users />
+            </RequireAdmin>
+          } />
         </Route>
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
