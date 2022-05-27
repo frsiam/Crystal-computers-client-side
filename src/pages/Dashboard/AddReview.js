@@ -30,26 +30,21 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                event.target.reset();
                 toast.success('Successfully added Your review !!')
             })
     }
     return (
-        <form onSubmit={handleReview} className='w-full'>
+        <form onSubmit={handleReview} className='w-full mt-8'>
             <h1 className='text-2xl text-accent font-bold text-center'>Add a review</h1>
-            <div className="form-control mx-auto w-full max-w-xs">
-                <label className="label">
-                    <span className="label-text">Your Review Text Here</span>
-                </label>
-                <textarea name='message' type="text" placeholder="Through Your  review meassage here" className="input input-bordered input-accent w-full max-w-xs block" rows="2" required />
+            <div className="form-control mx-auto w-full max-w-xs my-4">
+                <textarea name='message' type="text" placeholder="Through Your  review meassage here" className="input input-info input-bordered w-full max-w-xs block" rows="3" required />
             </div>
-            <div className="form-control mx-auto w-full max-w-xs">
-                <label className="label">
-                    <span className="label-text">Your Ratings Here</span>
-                </label>
-                <input name='ratings' type="number" placeholder="Your ratings out of 5?" className="input input-bordered input-accent w-full max-w-xs block" required />
+            <div className="form-control mx-auto w-full max-w-xs my-4">
+                <input name='ratings' type="number" step="0.01" placeholder="Your ratings out of 5?" className="input input-bordered input-info w-full max-w-xs block" required />
             </div>
             <div className="form-control mx-auto w-full max-w-xs mt-4">
-                <input className='btn w-full max-w-xm' type="submit" value='Submit' />
+                <input className='btn btn-primary w-full max-w-xm' type="submit" value='Submit' />
             </div>
         </form>
     );

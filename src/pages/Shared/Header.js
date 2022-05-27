@@ -47,7 +47,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end ">
-                <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                <label htmlFor='dashboard-sidebar' tabIndex="0" className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </label>
             </div>
