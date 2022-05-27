@@ -4,9 +4,7 @@ import SingleParts from './SingleParts';
 
 const Parts = () => {
     const { data: parts, isLoading } = useQuery('parts', () =>
-        // heroku: https://warm-chamber-44220.herokuapp.com/
-        // Local: http://localhost:4000/
-        fetch('https://warm-chamber-44220.herokuapp.com/parts')
+        fetch('http://localhost:4000/parts')
             .then(res => res.json())
     )
     if (isLoading) {

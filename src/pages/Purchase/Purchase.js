@@ -15,9 +15,7 @@ const Purchase = () => {
 
     const [part, setPart] = useState({});
     useEffect(() => {
-        // heroku: https://warm-chamber-44220.herokuapp.com/
-        // Local: http://localhost:4000/
-        fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`)
+        fetch(`http://localhost:4000/part/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPart(data)
@@ -57,9 +55,7 @@ const Purchase = () => {
         }
 
         const newQuantity = { availableQuantity: parseFloat(availableQuantity) - parseFloat(orderQuantity) };
-        // heroku: https://warm-chamber-44220.herokuapp.com/
-        // Local: http://localhost:4000/
-        fetch('https://warm-chamber-44220.herokuapp.com/order', {
+        fetch('http://localhost:4000/order', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
@@ -68,9 +64,7 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-        // heroku: https://warm-chamber-44220.herokuapp.com/
-        // Local: http://localhost:4000/
-        fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`, {
+        fetch(`http://localhost:4000/part/${id}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json'
