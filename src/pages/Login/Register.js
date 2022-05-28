@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -24,11 +24,11 @@ const Register = () => {
     const [token] = useToken(user || gUser);
     let signInError;
 
-    if (token) {
-        console.dir(user || gUser)
-        // navigate('/appointment')
-        navigate('/')
-    }
+    useEffect(() => {
+        if (token) {
+            navigate('/')
+        }
+    }, [token, navigate])
 
     if (error || gError || updateError) {
         signInError = <p className='text-red-600'>{error?.message || gError?.message || updateError?.message}</p>

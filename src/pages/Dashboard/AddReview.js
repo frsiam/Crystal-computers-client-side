@@ -20,7 +20,7 @@ const AddReview = () => {
             message: reviewText,
             ratings: rating
         };
-        fetch('http://localhost:4000/review', {
+        fetch('https://warm-chamber-44220.herokuapp.com/review', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'

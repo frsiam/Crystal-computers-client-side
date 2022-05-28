@@ -9,7 +9,7 @@ import Loading from '../Shared/Loading';
 const Users = () => {
     const navigate = useNavigate();
     const { data: users, isLoading, refetch } = useQuery('users', () =>
-        fetch('http://localhost:4000/user', {
+        fetch('https://warm-chamber-44220.herokuapp.com/user', {
             method: 'get',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,8 +24,12 @@ const Users = () => {
                 return res.json()
             })
     )
+
+    if (isLoading) {
+        return <Loading />
+    }
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:4000/user/admin/${user}`, {
+        fetch(`https://warm-chamber-44220.herokuapp.com/user/admin/${user}`, {
             method: 'put',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +37,7 @@ const Users = () => {
         })
             .then(res => {
                 if (res.status === 403) {
-                    toast.error('Failed Make an Admin !!!')
+                    toast.error('Failed to Make an Admin !!!')
                 }
                 return res.json()
             })
@@ -43,9 +47,6 @@ const Users = () => {
                     toast.success('Make admin Successfully !!!')
                 }
             })
-    }
-    if (isLoading) {
-        return <Loading />
     }
     return (
         <div>

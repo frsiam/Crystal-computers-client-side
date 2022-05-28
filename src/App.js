@@ -16,6 +16,7 @@ import Register from './pages/Login/Register';
 import RequireAdmin from './pages/Login/RequireAdmin';
 import RequireAuth from './pages/Login/RequireAuth';
 import NotFound from './pages/NotFound/NotFound';
+import Portfolio from './pages/Portfolio/Portfolio';
 import Purchase from './pages/Purchase/Purchase';
 import Footer from './pages/Shared/Footer';
 import Header from './pages/Shared/Header';
@@ -31,36 +32,19 @@ function App() {
           <RequireAuth>
             <Purchase />
           </RequireAuth>} />
-        <Route path='dashboard' element={
-          <RequireAuth>
-            <Dashboard />
-          </RequireAuth>
-        }>
-          <Route index element={<MyOrders />} />
+        {/* dashboard route start  */}
+        <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index element={<MyProfile />} />
           <Route path='addreview' element={<AddReview />} />
-          <Route path='myprofile' element={<MyProfile />} />
-          <Route path='addproduct' element={
-            <RequireAdmin>
-              <AddProduct />
-            </RequireAdmin>
-          } />
-          <Route path='manageproducts' element={
-            <RequireAdmin>
-              <ManageProduct />
-            </RequireAdmin>
-          } />
-          <Route path='manageorders' element={
-            <RequireAdmin>
-              <ManageOrders />
-            </RequireAdmin>
-          } />
-          <Route path='users' element={
-            <RequireAdmin>
-              <Users />
-            </RequireAdmin>
-          } />
+          <Route path='myorders' element={<MyOrders />} />
+          <Route path='addproduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
+          <Route path='manageproducts' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />
+          <Route path='manageorders' element={<RequireAdmin><ManageOrders /></RequireAdmin>} />
+          <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
         </Route>
+        {/* dashboard route end  */}
         <Route path='blogs' element={<Blogs />} />
+        <Route path='portfolio' element={<Portfolio />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route path='*' element={<NotFound />} />

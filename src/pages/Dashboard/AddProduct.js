@@ -33,7 +33,7 @@ const AddProduct = () => {
                         description: data.description
                     }
                     // send to your database 
-                    fetch('http://localhost:4000/addproduct', {
+                    fetch('https://warm-chamber-44220.herokuapp.com/addproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

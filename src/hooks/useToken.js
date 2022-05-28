@@ -2,27 +2,30 @@ import React, { useEffect, useState } from 'react';
 
 const useToken = (user) => {
     const [token, setToken] = useState('');
-
+    const email = user?.user?.email;
     useEffect(() => {
-        const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`http://localhost:4000/user/${email}`, {
+            fetch(`https://warm-chamber-44220.herokuapp.com/user/${email}`, {
                 method: 'put',
                 headers: {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify(currentUser)
             })
-                .then(res => res.json())
+                .then(res => {
+                    // console.log(res);
+                    return res.json()
+                })
                 .then(data => {
-                    console.log('inside ustoken', data);
-                    const accessToken = data.token;
+                    // console.log('inside ustoken', data);
+                    const accessToken = data?.token;
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
                 })
         }
-    }, [user])
+    }, [email])
+
     return [token];
 };
 

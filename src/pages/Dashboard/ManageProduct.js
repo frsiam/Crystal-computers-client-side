@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 
 const ManageProduct = () => {
     const { data: allproducts, isLoading, refetch } = useQuery('products', () =>
-        fetch('http://localhost:4000/parts')
+        fetch('https://warm-chamber-44220.herokuapp.com/parts')
             .then(res => res.json())
     )
 
@@ -15,7 +15,7 @@ const ManageProduct = () => {
         const proceed = window.confirm('Are you sure to delete this Product?');
         if (proceed) {
             console.log(id)
-            fetch(`http://localhost:4000/deleteparts/${id}`, {
+            fetch(`https://warm-chamber-44220.herokuapp.com/deleteparts/${id}`, {
                 method: 'delete',
                 headers: {
                     'content-type': 'application/json'
@@ -49,8 +49,8 @@ const ManageProduct = () => {
                             allproducts.map((product, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>
-                                    <div class="avatar">
-                                        <div class="w-16 mask mask-squircle">
+                                    <div className="avatar">
+                                        <div className="w-16 mask mask-squircle">
                                             <img src={product.img} alt='avatar' />
                                         </div>
                                     </div>
