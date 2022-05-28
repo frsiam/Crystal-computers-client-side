@@ -14,7 +14,7 @@ const ManageProduct = () => {
     const deleteProduct = (id) => {
         const proceed = window.confirm('Are you sure to delete this Product?');
         if (proceed) {
-            console.log(id)
+            // console.log(id)
             fetch(`https://warm-chamber-44220.herokuapp.com/deleteparts/${id}`, {
                 method: 'delete',
                 headers: {
@@ -23,7 +23,7 @@ const ManageProduct = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     refetch()
                 })
         }
@@ -50,7 +50,7 @@ const ManageProduct = () => {
                                 <th>{index + 1}</th>
                                 <td>
                                     <div className="avatar">
-                                        <div className="w-16 mask mask-squircle">
+                                        <div className="w-8 mask mask-squircle">
                                             <img src={product.img} alt='avatar' />
                                         </div>
                                     </div>
@@ -58,8 +58,8 @@ const ManageProduct = () => {
                                 <td>{product.name}</td>
                                 <td>{product.price}</td>
                                 <td className='flex gap-2 flex-col lg:flex-row justify-center'>
-                                    <button className="btn btn-primary">Update</button>
-                                    <button onClick={() => deleteProduct(product._id)} className="btn btn-error">Delete</button>
+                                    <button className="btn btn-sm btn-primary">Update</button>
+                                    <button onClick={() => deleteProduct(product._id)} className="btn btn-sm btn-error">Delete</button>
                                 </td>
                             </tr>)
                         }

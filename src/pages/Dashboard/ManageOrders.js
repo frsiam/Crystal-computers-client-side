@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 
 const ManageOrders = () => {
     const [user] = useAuthState(auth);
-    const { data: orders, isLoading, refetch } = useQuery('allOrders', () =>
+    const { data: orders, isLoading } = useQuery('allOrders', () =>
         fetch(`https://warm-chamber-44220.herokuapp.com/orders/${user.email}`, {
             method: 'get',
             headers: {
@@ -18,6 +18,7 @@ const ManageOrders = () => {
     if (isLoading) {
         return <Loading />
     }
+
     return (
         <div className='max-w-6xl mx-auto mt-8'>
             <div className="overflow-x-auto">
@@ -36,7 +37,7 @@ const ManageOrders = () => {
                     <tbody className='text-center'>
                         {/* <!-- row 1 --> */}
                         {
-                            orders.map((order, index) => <tr key={index}>
+                            orders?.map((order, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{order.userName}</td>
                                 <td>{order.productName}</td>

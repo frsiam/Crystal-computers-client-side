@@ -51,7 +51,7 @@ const MyOrders = () => {
     return (
         <div className='max-w-6xl mx-auto mt-8'>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-full table-compact">
                     {/* <!-- head --> */}
                     <thead className='text-center'>
                         <tr>

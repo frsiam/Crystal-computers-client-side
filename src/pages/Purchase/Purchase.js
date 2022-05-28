@@ -65,7 +65,7 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 toast.success('Your order successfully completed !!')
             })
         fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`, {
@@ -77,7 +77,7 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setIsReload(!isReload)
             })
     }
