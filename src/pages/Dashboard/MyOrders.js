@@ -38,8 +38,7 @@ const MyOrders = () => {
                 method: 'delete',
                 headers: {
                     'content-type': 'application/json'
-                },
-                // body: JSON.stringify(newQuantity)
+                }
             })
                 .then(res => res.json())
                 .then(data => {

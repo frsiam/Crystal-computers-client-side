@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query'
+import Loading from '../Shared/Loading';
 import SingleParts from './SingleParts';
 
 const Parts = () => {
@@ -8,7 +9,7 @@ const Parts = () => {
             .then(res => res.json())
     )
     if (isLoading) {
-        return <p>Loading...</p>
+        return <Loading />
     }
     return (
         <div className='max-w-6xl mx-auto'>
