@@ -9,7 +9,7 @@ import Loading from '../Shared/Loading';
 const Users = () => {
     const navigate = useNavigate();
     const { data: users, isLoading, refetch } = useQuery('users', () =>
-        fetch('https://warm-chamber-44220.herokuapp.com/user', {
+        fetch('http://localhost:4000/user', {
             method: 'get',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,7 +25,7 @@ const Users = () => {
             })
     )
     const handleMakeAdmin = (user) => {
-        fetch(`https://warm-chamber-44220.herokuapp.com/user/admin/${user}`, {
+        fetch(`http://localhost:4000/user/admin/${user}`, {
             method: 'put',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

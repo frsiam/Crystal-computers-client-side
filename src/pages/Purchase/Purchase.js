@@ -16,7 +16,7 @@ const Purchase = () => {
 
     const [part, setPart] = useState({});
     useEffect(() => {
-        fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`)
+        fetch(`http://localhost:4000/part/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPart(data)
@@ -56,7 +56,7 @@ const Purchase = () => {
         }
 
         const newQuantity = { availableQuantity: parseFloat(availableQuantity) - parseFloat(orderQuantity) };
-        fetch('https://warm-chamber-44220.herokuapp.com/order', {
+        fetch('http://localhost:4000/order', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +68,7 @@ const Purchase = () => {
                 console.log(data)
                 toast.success('Your order successfully completed !!')
             })
-        fetch(`https://warm-chamber-44220.herokuapp.com/part/${id}`, {
+        fetch(`http://localhost:4000/part/${id}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json'
