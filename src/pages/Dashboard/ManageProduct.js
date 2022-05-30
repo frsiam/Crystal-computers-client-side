@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const ManageProduct = () => {
     const { data: allproducts, isLoading, refetch } = useQuery('products', () =>
-        fetch('https://warm-chamber-44220.herokuapp.com/parts')
+        fetch(`http://localhost:4000/parts`, {
+            method: 'get',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
     )
 
@@ -15,7 +20,7 @@ const ManageProduct = () => {
         const proceed = window.confirm('Are you sure to delete this Product?');
         if (proceed) {
             // console.log(id)
-            fetch(`https://warm-chamber-44220.herokuapp.com/deleteparts/${id}`, {
+            fetch(`http://localhost:4000/deleteparts/${id}`, {
                 method: 'delete',
                 headers: {
                     'content-type': 'application/json'

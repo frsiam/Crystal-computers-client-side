@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useToken = (user) => {
     const [token, setToken] = useState('');
@@ -6,7 +6,7 @@ const useToken = (user) => {
     useEffect(() => {
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://warm-chamber-44220.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:4000/user/${email}`, {
                 method: 'put',
                 headers: {
                     'content-type': 'application/json'

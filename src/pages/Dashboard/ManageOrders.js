@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const ManageOrders = () => {
     const [user] = useAuthState(auth);
     const { data: orders, isLoading } = useQuery('allOrders', () =>
-        fetch(`https://warm-chamber-44220.herokuapp.com/orders/${user.email}`, {
+        fetch(`http://localhost:4000/orders/${user.email}`, {
             method: 'get',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

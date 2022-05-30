@@ -5,7 +5,12 @@ import SingleParts from './SingleParts';
 
 const Parts = () => {
     const { data: parts, isLoading } = useQuery('parts', () =>
-        fetch('https://warm-chamber-44220.herokuapp.com/parts')
+        fetch('http://localhost:4000/parts', {
+            method: 'get',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
     )
     if (isLoading) {
