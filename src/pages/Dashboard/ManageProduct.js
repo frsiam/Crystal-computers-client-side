@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import UpdateProductModal from './UpdateProductModal';
 
 const ManageProduct = () => {
+    const [updateProduct, setUpdateProduct] = useState(null);
     const { data: allproducts, isLoading, refetch } = useQuery('products', () =>
         fetch(`http://localhost:4000/parts`, {
             method: 'get',
@@ -16,6 +18,7 @@ const ManageProduct = () => {
     if (isLoading) {
         return <Loading />
     }
+
     const deleteProduct = (id) => {
         const proceed = window.confirm('Are you sure to delete this Product?');
         if (proceed) {
@@ -33,6 +36,7 @@ const ManageProduct = () => {
                 })
         }
     }
+
 
     return (
         <div className='max-w-6xl mx-auto mt-8'>
@@ -63,10 +67,17 @@ const ManageProduct = () => {
                                 <td>{product.name}</td>
                                 <td>{product.price}</td>
                                 <td className='flex gap-2 flex-col lg:flex-row justify-center'>
-                                    <button className="btn btn-sm btn-primary">Update</button>
-                                    <button onClick={() => deleteProduct(product._id)} className="btn btn-sm btn-error">Delete</button>
+
+                                    <label onClick={() => setUpdateProduct(product)} for="product-update-modal" className="btn btn-primary">Update</label>
+
+                                    <button onClick={() => deleteProduct(product._id)} className="btn btn-error">Delete</button>
                                 </td>
                             </tr>)
+                        }
+                        {
+                            updateProduct && <UpdateProductModal updateProduct={updateProduct}
+                                setUpdateProduct={setUpdateProduct}
+                                refetch={refetch} />
                         }
                     </tbody>
                 </table>
