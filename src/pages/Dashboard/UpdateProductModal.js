@@ -40,7 +40,7 @@ const UpdateProductModal = ({ updateProduct, setUpdateProduct, refetch }) => {
             <input type="checkbox" id="product-update-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label for="product-update-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label for="product-update-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     {/* <h3 className="font-bold text-lg">Congratulations random Interner user!.....{name}</h3> */}
                     <form onSubmit={handleSubmit(onSubmit)} className='mx-auto border rounded-md py-4 px-8 shadow-md shadow-orange-500 bg-gradient-to-r from-pink-300'>
                         <h1 className='text-2xl font-bold text-accent text-center mb-3'>Add Your new Product</h1>
