@@ -2,6 +2,8 @@
 
 ## Live Website Link [Crystal Computers](https://crystal-computers-tech.web.app/).
 
+### Server side github link [server side](https://github.com/frsiam/Crystal-computers-server-side)
+
 * This is the computer parts manufacturer name is crystal computer tech limited website.
 * Here visitor can login or register by email and password or google.
 * Customer can order the product if he logged in.
